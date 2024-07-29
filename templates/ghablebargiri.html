@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بارگیری ترانسفورماتور</title>
+    <style>
+        body {
+            font-family: "Helvetica", "Arial", sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 50px auto;
+            width: 90%;
+            max-width: 800px;
+        }
+        .form-container h3 {
+            margin-bottom: 20px;
+        }
+        .form-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .form-container th, .form-container td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .form-container tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .form-container input[type="submit"] {
+            background-color: #183D4E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #14506b;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            <h2>جهت متعادل سازی بار ترانس هوایی</h2>
+            <h2>مقادیر اندازه گیری شده را وارد کنید</h2>
+            <h3>نام ترانس</h3>
+            <table>
+                <tr>
+                    <td>{{form.trans_name}}</td>
+                </tr>
+            </table>
+            <h3>فیدرها</h3>
+            <table>
+                <tr>
+                    <th>فیدر یک- چپ</th>
+                    <th>فیدر یک- وسط</th>
+                    <th>فیدر یک- راست</th>
+                </tr>
+                <tr>
+                    <td>{{form.F1_1}}</td>
+                    <td>{{form.F1_2}}</td>
+                    <td>{{form.F1_3}}</td>
+                </tr>
+                <tr>
+                    <th>فیدر دو- چپ</th>
+                    <th>فیدر دو- وسط</th>
+                    <th>فیدر دو- راست</th>
+                </tr>
+                <tr>
+                    <td>{{form.F2_1}}</td>
+                    <td>{{form.F2_2}}</td>
+                    <td>{{form.F2_3}}</td>
+                </tr>
+                <tr>
+                    <th>فیدر سه- چپ</th>
+                    <th>فیدر سه- وسط</th>
+                    <th>فیدر سه- راست</th>
+                </tr>
+                <tr>
+                    <td>{{form.F3_1}}</td>
+                    <td>{{form.F3_2}}</td>
+                    <td>{{form.F3_3}}</td>
+                </tr>
+                <tr>
+                    <th>فیدر چهار- چپ</th>
+                    <th>فیدر چهار- وسط</th>
+                    <th>فیدر چهار- راست</th>
+                </tr>
+                <tr>
+                    <td>{{form.F4_1}}</td>
+                    <td>{{form.F4_2}}</td>
+                    <td>{{form.F4_3}}</td>
+                </tr>
+            </table>
+            <div style="text-align: center; margin-top: 30px;">
+                <input type="submit" value="نمایش بار ترانس پس ازمتعادل سازی" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>
